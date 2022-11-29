@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+:root{
+  --baby-blue: #6CCFF6;
+  --blue-dark: #001C55;
+  --sonic-silver: #757780;
+  --baby-powder: #FFFFFC;
+  --yellow-green: #98CE00;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: var(--baby-powder);
+  color: var(--blue-dark);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button{
+ background-color: white;
+ outline: none;
+ border: none   
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover, buttton:focus{
+  outline: none;
+}
+
+
+/* ............................................................................ HEADER HEADER HEADER HEADER HEADER HEADER HEADER .................................................... */
+
+header{
+  /* background-color: var(--baby-blue); */
+  background-image: url(./assets/images/bg.jpg);
+  background-size: cover;
+  padding: 40px;
+  margin: 0px;
+}
+
+header nav{
+  background-color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 12px 32px;
+  border-radius: 28px;
+  width: 70%;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+nav img{
+  width:100%;
+  max-width:96px;
+  margin: 0 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a{
+  text-decoration: none;
+  color: black;
+  font-size:12px;
 }
+
+nav button{
+  border: solid 1px var(--baby-blue);
+  padding: 6px 12px;
+  border-radius: 16px;
+  color: var(--baby-blue);
+}
+
+div.title{
+  width: 200px;
+  text-align: center;
+  margin: 80px auto 128px auto;
+  background-color: #1BC5C7;
+  opacity: 0.9;
+  padding: 40px 40px;
+  border-radius: 1024px;
+}
+
+div.title button{
+  margin: 16px 0 12px 0;
+  width: 80%;
+  padding: 8px 0px;
+  border-radius: 16px;
+  color: var(--baby-blue);
+}
+
