@@ -1,16 +1,7 @@
 import web3funder from "../assets/images/web3funder.svg";
 import menu from "../assets/images/ham.svg";
-import x from "../assets/images/x.svg";
+import MobileMenu from "../molecules/MobileMenu";
 
-function SideNav (){
-    return(
-        <nav>
-            <img src={x} alt="exit icon" />
-            <button>Connect your wallet</button>
-          <button>Start a GoFundMe</button>
-        </nav>
-    )
-}
 
 function HomePage() {
   return (
@@ -34,14 +25,15 @@ function HomePage() {
           </div>
           <button>Connect your wallet</button>
           <button>Start a GoFundMe</button>
-          <img
+          <MobileMenu />
+          {/* <img
             src={menu}
             alt="menu icon"
             onClick={() => {
               console.log("test");
             }}
             className="menu"
-          />
+          /> */}
         </nav>
         <div className="header-content">
           <div className="title">
