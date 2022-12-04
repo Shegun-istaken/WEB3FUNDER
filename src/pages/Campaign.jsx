@@ -1,4 +1,4 @@
-import { redirect, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { ethers } from "ethers"
 import { useState } from "react"
 

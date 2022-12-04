@@ -1,11 +1,9 @@
 import ham from "../assets/images/ham.svg";
-import x from "../assets/images/x.svg";
 import { useState } from "react";
 
 function MobileNav({ OnClick, classname }) {
   return (
     <nav id="mobile-nav-ul" className={classname}>
-      {/* <img src={x} alt="x icon" onClick={OnClick} id="x" /> */}
       <ul>
           <button>Connect your wallet</button>
           <button>Start a GoFundMe</button>
