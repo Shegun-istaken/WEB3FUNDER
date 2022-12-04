@@ -1,49 +1,54 @@
-import web3funder from "../assets/images/web3funder.svg";
-import menu from "../assets/images/ham.svg";
-import MobileMenu from "../molecules/MobileMenu";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import CreateCampaignModal from "../molecules/CreateCampaignModal";
+import { getFromLocalStorage } from "../utils/local-strorage";
 
+function HomePage({ weFunderContract, donated }) {
+  const [isActiveModal, setIsActiveModal] = useState(false)
+  const [myNfts, setMyNfts] = useState([""])
 
-function HomePage() {
+  useEffect(() => {
+    const myNfts = getFromLocalStorage("myNfts")
+    console.log(myNfts)
+    if (!myNfts) {
+      return
+    }
+    setMyNfts(myNfts)
+  }, [])
   return (
     <div>
       <header>
-        <nav>
-          <div className="divImage">
-            <img src={web3funder} alt="web3funder logo" />
-          </div>
-          <div className="header-input">
-            <input placeholder="Find a Web3Funder Campaign" />
-            <svg
-              className="search"
-              xmlns="http://www.w3.org/2000/svg"
-              height="40"
-              width="40"
-              viewBox="0 0 100 100"
-            >
-              <path d="M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875Z" />
-            </svg>
-          </div>
-          <button>Connect your wallet</button>
-          <button>Start a GoFundMe</button>
-          <MobileMenu />
-          {/* <img
-            src={menu}
-            alt="menu icon"
-            onClick={() => {
-              console.log("test");
-            }}
-            className="menu"
-          /> */}
-        </nav>
         <div className="header-content">
           <div className="title">
             <h1>Your Home for Help</h1>
           </div>
-          <button>Start a Crowdfunding Campaign</button>
-          <button>Contribute </button>
+          <button onClick={() => setIsActiveModal(true)}>Start a Crowdfunding Campaign</button>
+          <Link to={"/campaigns"}><button>Contribute </button></Link>
+        </div>
+        <div className="absolute bottom-8 w-3/6 left-5 bg-[#6ccff6] p-2">
+          <h2 className="text-lg font-bold">Your NFT's</h2>
+          {
+            myNfts.length > 0 ?
+            <div>
+              {
+                myNfts.map((myNft) => {
+                  return (
+                    <p className="truncate ..."><a href={myNft}>{myNft}</a></p>
+                  )
+                })
+              }
+            </div>
+            :
+            <h3>You Have No Donor NFTs Yet</h3>
+          }
         </div>
       </header>
-      <main></main>
+      <main>
+        <div className={`fixed transition-all ease-in duration-1000 ${isActiveModal ? "top-20" : "top-[-1000px]"} left-0 z-10 bg-blue-50/[75] w-full p-16`}>
+          <CreateCampaignModal weFunderContract={weFunderContract} setIsActiveModal={setIsActiveModal}/>
+        </div>
+      </main>
     </div>
   );
 }

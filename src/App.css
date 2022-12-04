@@ -57,33 +57,38 @@ div.header-content button:focus {
   background-color: var(--baby-powder);
 }
 
-header nav {
+nav {
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 32px;
-  border-radius: 28px;
-  width: 70%;
-  margin: 0 auto;
+  /* position: relative; */
+  /* margin-bottom: 40px; */
+  /* top: 20px; */
+  /* left: 0; */
+  /* right: 0;  */
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* display: grid; */
+  /* grid-template-columns: auto auto auto auto; */
+  /* align-items: center;
+  justify-items: center; */
+  /* padding: 12px 32px; */
+  /* border-radius: 28px; */
+  /* width: 80%; */
 }
 
-nav div.divImage {
-  flex-basis: 20%;
-  padding-left: 8%;
-}
+/* nav div.divImage {
+  width: 100%;
+} */
 
 nav img {
   width: 100%;
   max-width: 128px;
-  margin: 0 20px;
 }
 
-nav a {
+/* nav a {
   text-decoration: none;
   color: black;
   font-size: 12px;
-}
+} */
 
 nav button {
   border: solid 1px var(--baby-blue);
@@ -94,18 +99,17 @@ nav button {
 
 nav input {
   border: 1px solid hsla(220, 100%, 17%, 0.2);
-  padding: 8px 16px 8px 38px;
   border-radius: 16px;
-  flex-basis: 30%;
 }
 
-nav div.header-input {
+/* nav div.header-input {
   position: relative;
-}
+} */
 
-nav svg.search {
-  fill: var(--baby-blue);
-  position: absolute;
+nav svg {
+  fill: var(--baby-powder);
+  font-weight: 900;
+  position: relative;
   left: 12px;
   top: 8px;
 }
@@ -117,7 +121,7 @@ div.header-content {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 80px auto 48px auto;
+  margin: 20px auto 48px auto;
 }
 
 div.header-content button {
@@ -140,9 +144,9 @@ div.title {
   margin-bottom: 24px;
 }
 
-nav img.menu {
+/* nav img.menu {
   display: none;
-}
+} */
 
 nav.mobile-nav {
   display: none;
@@ -155,17 +159,17 @@ button#ham-button {
 /* ..................................... MEDIA QUERIES ........................................... */
 
 @media only screen and (max-width: 1180px) {
-  header nav {
+  /* header nav {
     flex-wrap: wrap;
-  }
+  } */
 
-  nav div.divImage {
+  /* nav div.divImage {
     flex-basis: 100%;
     padding-left: 0;
     padding-bottom: 16px;
     display: flex;
     justify-content: center;
-  }
+  } */
 
   nav.mobile-nav{
     display: none;
@@ -215,7 +219,7 @@ button#ham-button {
     background-color: var(--baby-powder);
   }
 
-  header nav {
+  /* header nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -225,33 +229,33 @@ button#ham-button {
 
   header nav > *:not(:first-child):not(:nth-child(2)):not(:last-child) {
     display: none;
-  }
+  } */
 
-  nav div.divImage {
+  /* nav div.divImage {
     flex-basis: 25%;
     display: flex;
     justify-content: flex-start;
     margin: 0;
     padding: 0;
-  }
+  } */
 
-  nav img.menu {
+  /* nav img.menu {
     display: block;
     width: 40px;
     margin: 0;
     filter: invert(68%) sepia(63%) saturate(414%) hue-rotate(164deg)
       brightness(99%) contrast(94%);
-  }
+  } */
 
   header img {
     width: 240px;
     margin: 0;
   }
 
-  nav div.divImage {
+  /* nav div.divImage {
     padding: 0px;
     width: 20%;
-  }
+  } */
 
   div.header-content {
     width: 70%;
